@@ -3,34 +3,39 @@ import React, { useState } from "react";
 
 const faqs = [
   {
-    question: "How do I open an account with GeekPay?",
+    question: "How do automated savings work on SaveWise Nexus?",
     answer:
-      'Opening an account with GeekPay is easy. Simply visit our website and click on the "Open an Account" button. Follow the prompts, provide the required information, and complete the application process. If you have any questions or need assistance, our customer support team is available to help.',
+      "Create an auto‑debit plan and choose how often we should debit your card or bank account. We automatically retry failed debits so you keep momentum, and you can save into open or locked vaults.",
   },
   {
-    question: "What documents do I need to provide to apply for a loan?",
+    question: "What returns should I expect on investments?",
     answer:
-      "The documents required for a loan application may vary depending on the type of loan you are applying for. Generally, you will need to provide identification documents (such as a passport or driver's license), proof of income (such as pay stubs or tax returns), and information about the collateral (if applicable). Our loan officers will guide you through the specific requirements during the application process.",
+      "We list low‑risk options such as government bonds and T‑bills through trusted partners. Expected annualized returns typically range 13–18% depending on tenor and market rates. Fees are clearly disclosed before you invest.",
   },
   {
-    question: "How can I access my accounts online?",
+    question: "How fast can I get a loan and how much?",
     answer:
-      'Accessing your accounts online is simple and secure. Visit our website and click on the "Login" button. Enter your username and password to access your accounts. If you haven\'t registered for online banking, click on the "Enroll Now" button and follow the registration process. If you need assistance, our customer support team is available to guide you.',
+      "Eligible users can access instant loans backed by their savings, up to 80% loan‑to‑value (LTV). Once approved, funds are disbursed in minutes and repayments are auto‑debited.",
   },
   {
-    question: "Are my transactions and personal information secure?",
+    question: "Is BVN required?",
     answer:
-      "At GeekPay, we prioritize the security of your transactions and personal information. We employ industry-leading encryption and multi-factor authentication to ensure that your data is protected. Additionally, we regularly update our security measures to stay ahead of emerging threats. You can bank with confidence knowing that we have robust security systems in place.",
+      "Yes. We use BVN verification to protect users and prevent fraud. It also helps us offer better limits and faster access to credit.",
   },
   {
-    question: "What is GeekPay's mobile app available on?",
+    question: "Can I run Ajo/Esusu group savings?",
     answer:
-      "Our mobile app is available for download on both iOS and Android devices. You can use it to check balances, transfer funds, deposit checks, and manage your finances on the go.",
+      "Yes. Create a group, add BVN‑verified members, set the rotation schedule and payout order, and we handle reminders and payouts securely.",
   },
   {
-    question: "Can I set up automatic bill payments?",
+    question: "What platforms are supported?",
     answer:
-      "Yes, you can set up automatic payments for recurring bills through our online banking platform. Just go to the Bill Pay section and follow the setup process.",
+      "SaveWise Nexus is mobile‑first with iOS and Android apps. An admin web dashboard supports monitoring, loan review, and fraud detection.",
+  },
+  {
+    question: "How is my data secured?",
+    answer:
+      "We use bank‑grade encryption, tokenized payments via Paystack/Flutterwave, and strict NDPR‑aligned data practices. Your funds and data are protected with multi‑factor authentication.",
   },
 ];
 
@@ -39,19 +44,19 @@ const FAQ = () => {
   const visibleFaqs = showAll ? faqs : faqs.slice(0, 4);
 
   return (
-    <div className="w-full mt-[4rem] md:mt-[6rem]">
+    <div className="w-full mt-[4rem] md:mt-[6rem]" id="faq">
       {/* Header */}
       <div className="w-[97%] mx-auto md:mx-0 md:w-[68%]">
         <h1 className="text-3xl md:text-4xl xl:text-5xl text-center md:text-left pt-4">
-          <span className="text-[#CAFF33]">Frequently </span>Asked Questions
+          <span className="text-[#facc15]">Frequently </span>Asked Questions
         </h1>
-        <h1 className="text-base pt-3.5 text-[#B3B3B3] text-center md:text-left">
-          Still you have any questions? Contact our Team via{" "}
+        <h1 className="text-base pt-3.5 text-white/70 text-center md:text-left">
+          Still have questions? Contact our team via {" "}
           <a
-            href="mailto:support@GeekPay.com"
-            className="text-[#CAFF33] hover:underline"
+            href="mailto:support@savewisenexus.com"
+            className="text-[#facc15] hover:underline"
           >
-            support@GeekPay.com
+            support@savewisenexus.com
           </a>
         </h1>
       </div>
@@ -62,19 +67,18 @@ const FAQ = () => {
           {visibleFaqs.map((faq, index) => (
             <div
               key={index}
-              className="w-[97%] mx-auto md:w-[49%] 2xl:w-[48%] mt-[4.5%] md:mt-[2%] bg-[#1C1C1C] rounded-[1rem] px-6 py-9 md:px-11 md:py-14 border border-[#262626]"
+              className="w-[97%] mx-auto md:w-[49%] 2xl:w-[48%] mt-[4.5%] md:mt-[2%] bg-white/5 rounded-[1rem] px-6 py-9 md:px-11 md:py-14 border border-white/10"
             >
               <h1 className="text-xl text-white">{faq.question}</h1>
-              <div className="my-5 h-[1px] bg-[#262626]" />
-              <p className="text-base text-[#B3B3B3]">{faq.answer}</p>
+              <div className="my-5 h-[1px] bg-white/10" />
+              <p className="text-base text-white/70">{faq.answer}</p>
             </div>
           ))}
         </div>
         {/* Fade-out effect at the bottom */}
         <div
-  className="absolute bottom-0 left-0 w-full h-[40vh] pointer-events-none bg-gradient-to-t from-[#1E1E1E] to-transparent"
-/>
-
+          className="absolute bottom-0 left-0 w-full h-[40vh] pointer-events-none bg-gradient-to-t from-[#0b0f14] to-transparent"
+        />
       </div>
 
       {/* Load More Button */}
@@ -82,9 +86,9 @@ const FAQ = () => {
         <div className="w-full flex items-center justify-center mt-5">
           <button
             onClick={() => setShowAll(true)}
-            className="px-7 py-3 rounded-full bg-[#262626] text-base cursor-pointer hover:bg-[#333333] transition-colors duration-300"
+            className="px-7 py-3 rounded-full bg-white/5 border border-white/10 text-base cursor-pointer hover:bg-white/10 transition-colors duration-300"
           >
-            Load All FAQs ↓
+            Load all FAQs ↓
           </button>
         </div>
       )}
