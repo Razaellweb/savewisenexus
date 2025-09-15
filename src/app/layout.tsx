@@ -25,9 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${dmSans.variable} antialiased relative min-h-screen text-white overflow-x-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0b1020] via-[#0b0f1a] to-[#0b0f14]`}
-      >
+      <body className={`${dmSans.variable} antialiased relative min-h-screen text-white overflow-x-hidden bg-black`}>
         <div className="w-[98%] md:w-[90%] 2xl:w-[80%] mx-auto pt-[2rem]">
           <Navbar />
           {children}
