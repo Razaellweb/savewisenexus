@@ -1,14 +1,12 @@
 "use client";
 
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
+import { useState } from "react";
 import { HiOutlineX } from "react-icons/hi";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // for active link (home only)
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
 
   const links = [
     { href: "#features", label: "Features" },
