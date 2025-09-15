@@ -17,10 +17,10 @@ const Navbar = () => {
   ];
 
   const Brand = () => (
-    <div className="left-0 flex gap-3 items-center">
+    <Link href="/" className="left-0 flex gap-3 items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1d4ed8] rounded-full">
       <span className="inline-block w-7 h-7 rounded-full bg-gradient-to-br from-[#1d4ed8] to-[#0f766e] shadow-[0_0_0_4px_rgba(255,255,255,0.05)]" />
       <h1 className="text-xl md:text-2xl font-semibold tracking-tight">SaveWise Nexus</h1>
-    </div>
+    </Link>
   );
 
   return (
